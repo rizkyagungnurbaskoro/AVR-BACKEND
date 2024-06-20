@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="../static/CCheckout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <title>Agua Vista Retreat</title>
+</head>
+<body class="body">
+<!--navbar starts-->
+<div class="container_navbar">
+    <div class="container_navbar_content">
+        <div class="container_Lnavbar">
+            <div class="logo"><img src="../static/LogoMain.png"></div>
+            <div class="container_Mnavbar">
+                <a href="index.html" class="LHome navbutton">Home</a>
+                <a href="index.html#targetRooms" class="LRooms navbutton">Rooms</a>
+                <a href="index.html#targetPrice" class="LPricing navbutton">Pricing</a>
+                <a href="index.html#targetAbout" class="LAbout  navbutton">About</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--navbar ends-->
+<div class="summary-container">
+    <div class="summary">
+        <div class="summary-title">Summary</div>
+        <div class="price-details">
+            <div class="price-item">
+                <div>Deluxe</div>
+                <div class="bold">RM550.00</div>
+            </div>
+            <div class="divider"></div>
+            <div class="price-item">
+                <div>Total:</div>
+                <div class="bold">RM550.00</div>
+            </div>
+        </div>
+        <form th:action="@{/payments/add}" th:object="${payment}" method="post">
+            <div class="payment-details">
+                <input type="text" th:field="*{cardHolderName}" class="input-field" placeholder="Cardholder’s Name">
+                <input type="text" th:field="*{cardNumber}" class="input-field" placeholder="Card Number">
+                <div class="input-group">
+                    <input type="text" th:field="*{expDate}" class="input-small" placeholder="Exp Date">
+                    <input type="text" th:field="*{cvc}" class="input-xsmall" placeholder="CVC">
+                </div>
+                <input type="submit" class="pay-now-button" value="Pay Now">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

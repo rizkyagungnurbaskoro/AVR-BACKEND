@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Agua Vista Retreat</title>
+  <link rel="stylesheet" href="../static/CMain.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
+
+  <script src="JMain.js"></script>
+</head>
+
+<body>
+<form id="bookingForm">
+  <!--navbar starts-->
+  <div class="container_navbar">
+    <div class="container_navbar_content">
+      <div class="container_Lnavbar">
+        <div class="logo"><img src="../static/LogoMain.png"></div>
+        <div class="container_Mnavbar">
+          <a href="#" class="LHome navbutton">Home</a>
+          <a href="#targetRooms" class="LRooms navbutton">Rooms</a>
+          <a href="#targetPrice" class="LPricing navbutton">Pricing</a>
+          <a href="#targetAbout" class="LAbout  navbutton">About</a>
+        </div>
+      </div>
+      <input onclick = "window.location.href='checkout.html';" type="submit" class="container_Rnavbar navbutton" value="Checkout">
+    </div>
+  </div>
+  <!--navbar starts-->
+
+  <!--big brand part starts-->
+  <div class="container_brand">
+    <div class="container_brand_text">AGUA VISTA RETREAT</div>
+  </div>
+  <!--big brand part starts-->
+
+  <!--booking part starts-->
+  <div class="container_booking">
+    <!--container for ROOM TYPE dropdown starts here-->
+    <div class="ddbooking">
+      <label class="thename roomtype">ROOM TYPE</label>
+      <!--container for dropdown starts here-->
+      <div class="ddroom">
+        <div class="dd" onclick="myFunction()">
+          <label class="ddtext-room ddtextcolor">Choose a room</label>
+          <div class="ddarrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="11" viewBox="0 0 19 11" fill="none">
+              <path d="M1 1L9.5 9L18 1" stroke="#5E6073" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="ddline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="224" height="4" viewBox="0 0 224 4" fill="none">
+            <path d="M2 2H222" stroke="#5E6073" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <!-- dd content starts here-->
+        <div id="myDropdown" class="dropdown-content-room">
+          <a href="#" onclick="selectRoom(event, 'Standard')">Standard</a>
+          <a href="#" onclick="selectRoom(event, 'Deluxe')">Deluxe</a>
+          <a href="#" onclick="selectRoom(event, 'Suite')">Suite</a>
+        </div>
+        <input type="hidden" id="selectedRoom" name="selectedRoom" value="">
+        <!-- dd content ends here-->
+      </div>
+      <!--container for dropdown ends here-->
+    </div>
+    <!--container for ROOM TYPE dropdown ends here-->
+
+    <!--container for GUEST dropdown starts here-->
+    <div class="ddbooking">
+      <label class="thename guest">GUEST</label>
+      <!--container for dropdown starts here-->
+      <div class="ddroom">
+        <div class="dd">
+          <div class="ddtext-guest ddtextcolor">Select guests</div>
+          <div class="ddarrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="11" viewBox="0 0 19 11" fill="none">
+              <path d="M1 1L9.5 9L18 1" stroke="#5E6073" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="ddline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="224" height="4" viewBox="0 0 224 4" fill="none">
+            <path d="M2 2H222" stroke="#5E6073" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <!-- guest dd content starts here-->
+        <div class="dropdown-content-guest">
+          <div class="counter-adult">
+            <div class="counter-adult-text">Adult</div>
+            <div class="counterA">
+              <p><button type="button" id="decrement-adult">-</button></p>
+              <div id="counter-adult" class="btnNo">0</div>
+              <p><button type="button" id="increment-adult">+</button></p>
+              <input type="hidden" name="counterValueAdult" id="counterValueAdult" value="0" required>
+            </div>
+          </div>
+
+          <div class="counter-child">
+            <div class="counter-child-text">Child</div>
+            <div class="counterA">
+              <p><button type="button" id="decrement-child">-</button></p>
+              <div id="counter-child" class="btnNo">0</div>
+              <p><button type="button" id="increment-child">+</button></p>
+              <input type="hidden" name="counterValueChild" id="counterValueChild" value="0" required>
+            </div>
+          </div>
+        </div>
+        <!-- guest dd content ends here-->
+      </div>
+    </div>
+    <!--container for GUEST dropdown ends here-->
+
+    <!--container for CHECK-IN dropdown starts here-->
+    <div class="ddbooking">
+      <label class="thename checkin">CHECK-IN</label>
+      <div class="ddroom">
+        <div class="dd">
+          <!-- CHECK-IN dd content starts here-->
+          <div class="dropdown-content-checkin">
+            <input type="date" id="checkin" name="checkin" required>
+          </div>
+          <!-- CHECK-IN content ends here-->
+        </div>
+      </div>
+    </div>
+    <!--container for CHECK-IN dropdown ends here-->
+
+    <!--container for CHECK-OUT dropdown starts here-->
+    <div class="ddbooking">
+      <label class="thename checkout">CHECK-OUT</label>
+      <div class="ddroom">
+        <div class="dd">
+          <!-- CHECK-OUT dd content starts here-->
+          <div class="dropdown-content-checkout">
+            <input type="date" id="checkout" name="checkout" required>
+          </div>
+          <!-- CHECK-OUT content ends here-->
+        </div>
+      </div>
+    </div>
+    <!--container for CHECK-OUT dropdown ends here-->
+  </div>
+  <!-- booking part ends-->
+</form>
+
+<!-- room part starts -->
+<div id="targetRooms" class="container_rooms">
+  <div class="title_rooms">ROOMS</div>
+  <div class="roompics">
+    <div class="pstandard">
+      <div class="roompictext sta">Standard</div>
+    </div>
+    <div class="pdeluxe">
+      <div class="roompictext del">Deluxe</div>
+    </div>
+    <div class="psuite">
+      <div class="roompictext sui">Suite</div>
+    </div>
+  </div>
+</div>
+<!-- room part ends -->
+
+<!-- pricing part starts -->
+<div id="targetPrice" class="container_pricing_big">
+  <div class="container_pricing">
+    <div class="container_pricing_title">PRICING</div>
+    <div class="container_pkg">
+      <!--standard price starts-->
+      <div class="container_pkg_small">
+        <div class="container_pkg_small_title">Standard</div>
+        <div class="container_pkg_small_list">
+          <ul>
+            <li>Can accommodate up to 2 persons</li>
+            <li>Totally soundproofed</li>
+            <li>High speed internet access</li>
+            <li>USB ports</li>
+            <li>Smart TV</li>
+            <li>Room cleaning touch system</li>
+          </ul>
+        </div>
+        <div class="container_pkg_small_price"><span class="price">RM350/</span>night</div>
+      </div>
+      <!--standard price ends-->
+
+      <!--deluxe price starts-->
+      <div class="container_pkg_small">
+        <div class="container_pkg_small_title">Deluxe</div>
+        <div class="container_pkg_small_list">
+          <ul>
+            <li>Can accommodate a family</li>
+            <li>Totally soundproofed</li>
+            <li> high speed internet access</li>
+            <li> USB ports</li>
+            <li> smart TV</li>
+            <li> room cleaning touch system.</li>
+          </ul>
+        </div>
+        <div class="container_pkg_small_price"><span class="price">RM550/</span>night</div>
+      </div>
+      <!--deluxe price ends-->
+
+      <!--Suite price starts-->
+      <div class="container_pkg_small">
+        <div class="container_pkg_small_title">Suite</div>
+        <div class="container_pkg_small_list">
+          <ul>
+            <li>Can accommodate a family</li>
+            <li>Totally soundproofed</li>
+            <li>high speed internet access</li>
+            <li>USB ports</li>
+            <li>smart TV</li>
+            <li>room cleaning touch system.</li>
+            <li>Hydromassage bathtub</li>
+          </ul>
+        </div>
+        <div class="container_pkg_small_price"><span class="price">RM650/</span>night</div>
+      </div>
+      <!--suite price ends-->
+
+    </div>
+  </div>
+</div>
+<!-- pricing part ends -->
+
+<!-- about part starts -->
+<div id="targetAbout" class="container_about">
+  <div class="container_about_title">About</div>
+  <div class="container_about_desc">Escape to Agua Vista Retreat, where refined elegance harmonizes with natural beauty. Our sanctuary offers luxurious accommodations nestled within an enchanting landscape. Impeccable service, culinary delights, and a commitment to sustainability await, inviting you to experience the essence of luxury hospitality in a setting of unparalleled tranquility.</div>
+</div>
+<!-- about part ends -->
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>&copy; 2024 Agua Vista Retreat. All Rights Reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

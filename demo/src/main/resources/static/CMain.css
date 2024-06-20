@@ -1,0 +1,503 @@
+/*background*********************************************************************************************/
+body{
+  margin: 0;
+  width: 100vw;
+  height: 2300px;
+  background: #5E6073;
+  max-width: 100%;
+}
+/*Background*********************************************************************************************/
+
+
+/*navbar*********************************************************************************************/
+.container_navbar{
+  display: flex;
+  position: fixed;
+  padding: 5px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: #F2F4D1;
+  width: 99%;
+  z-index: 1;
+
+}
+
+.container_navbar_content{
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.container_Lnavbar{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo img{
+  width: 75%;
+  height: 75%;
+}
+
+.container_Mnavbar{
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+  color: #5E6073;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.container_Rnavbar{
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid #5E6073;
+  color: #5E6073;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/*  effect while hover  */
+.navbutton:hover{
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #5E6073;
+}
+
+input{
+  background-color: unset;
+}
+/*Navbar*********************************************************************************************/
+
+
+/*big brand******************************************************************************************/
+.container_brand{
+  display: flex;
+  height: 581px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background: url(mainphoto.png) lightgray 0px -132.961px / 100% 145.77% no-repeat;
+}
+
+.container_brand_text{
+  color: #F2F4D1;
+  font-family: Italiana;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+/*big brand******************************************************************************************/
+
+
+/*booking******************************************************************************************/
+.container_booking{
+  display: flex;
+  height: 50px;
+  padding: 30px 100px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 71px;
+  flex-shrink: 0;
+  background: #F2F4D1;
+}
+
+/*container for each of the dropdown*/
+.ddbooking{
+  display: flex;
+  width: 224px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+  flex-shrink: 0;
+}
+
+/*label for each of the dropdown*/
+.thename{
+  color: #5E6073;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+/*container for each dd including the dd content*/
+.ddroom{
+  position: relative;
+  display: inline-block;
+  width: 220px;
+  height: 34px;
+  cursor: pointer;
+}
+
+/*container for the dd abstract*/
+.dd{
+  display: flex;
+  width: 224px;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.ddline{
+  width: 220px;
+  height: 0px;
+  flex-shrink: 0;
+  stroke-width: 3px;
+  stroke: #5E6073;
+}
+
+.ddtext-room, .ddtext-guest, .ddtext-date-in, .ddtext-date-out{
+  color: rgba(94, 96, 115, 0.50);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.ddarrow{
+  width: 17px;
+  height: 8px;
+  flex-shrink: 0;
+  stroke-width: 2px;
+  stroke: #5E6073;
+  transition-duration: 0.8s;
+}
+
+/*dropdown content ROOM*/
+.dropdown-content-room {
+  display: none;
+  position: absolute;
+  top: 35px;
+  min-width: 225px;
+  border-radius: 10px;
+  background: #F2F4D1;
+  /* Drop Shadow */
+  box-shadow: 0px 460px 129px 0px rgba(0, 0, 0, 0.00), 0px 295px 118px 0px rgba(0, 0, 0, 0.01), 0px 166px 99px 0px rgba(0, 0, 0, 0.05), 0px 74px 74px 0px rgba(0, 0, 0, 0.09), 0px 18px 41px 0px rgba(0, 0, 0, 0.10);
+}
+
+/*dropdown content for each room selection*/
+.dropdown-content-room a{
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  color: #5E6073;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/*display the dd content while hover*/
+.ddroom:hover .dropdown-content-room{
+  display: block;
+}
+
+/*recolor the font to black while hover*/
+.dropdown-content-room a:hover{
+  color: #000;
+}
+
+/*to display the dd content, works with JS*/
+.show{
+  display: block;
+}
+
+/*rotate the arrow while hover*/
+.ddroom:hover .ddarrow{
+  transform: rotate(-180deg);
+  transform-origin: bottom;
+}
+
+/* to change the font color while hover*/
+.ddroom:hover .ddtextcolor{
+  color: black;
+}
+
+/*to change the displayed output with JS code intergration*/
+.selected{
+  color: #000;
+}
+
+
+.counterA, counterB{
+  display: flex;
+  padding: 0px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.btnNo{
+  color: #5E6073;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+/*dropdown content guest*/
+.dropdown-content-guest{
+  display: none;
+  position: absolute;
+  top: 35px;
+  min-width: 225px;
+  padding: 0px 0px 20px 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #F2F4D1;
+  /* Drop Shadow */
+  box-shadow: 0px 460px 129px 0px rgba(0, 0, 0, 0.00), 0px 295px 118px 0px rgba(0, 0, 0, 0.01), 0px 166px 99px 0px rgba(0, 0, 0, 0.05), 0px 74px 74px 0px rgba(0, 0, 0, 0.09), 0px 18px 41px 0px rgba(0, 0, 0, 0.10);
+  width: 224px;
+  height: 118px;
+
+}
+
+/*container for adult and child counter*/
+.counter-adult, .counter-child{
+  display: flex;
+  width: 224px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*display guest dd content while hover JS*/
+.ddroom:hover .dropdown-content-guest{
+  display: block;
+}
+
+/*datepicker style*/
+input[type="date"]{
+  width: 224px;
+  border-radius: 30px;
+  background-color: unset;
+}
+::-webkit-datetime-edit-fields-wrapper {padding: 10px;}
+::-webkit-datetime-edit-text { }
+::-webkit-datetime-edit-month-field {}
+::-webkit-datetime-edit-day-field {}
+::-webkit-datetime-edit-year-field {}
+::-webkit-inner-spin-button { display: none; }
+::-webkit-calendar-picker-indicator { padding: 0px 20px;}
+/*booking******************************************************************************************/
+
+
+/*room******************************************************************************************/
+.container_rooms{
+  margin: 40px auto;
+  display: flex;
+  width: 1389px;
+  padding: 10px 0px 30px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 41px;
+  border-radius: 30px;
+  border: 3px solid #F2F4D1;
+}
+
+.title_rooms{
+  color: #F2F4D1;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.roompics{
+  display: flex;
+  width: 1440px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.pstandard{
+  position: relative;
+  width: 412px;
+  height: 311px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(standard.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
+}
+
+.pdeluxe{
+  position: relative;
+  width: 412px;
+  height: 311px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(deluxe.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
+}
+
+.psuite{
+  position: relative;
+  width: 412px;
+  height: 311px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(suite.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
+}
+
+.roompictext{
+  color: #F2F4D1;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.sta{
+  position: absolute;
+  left: 153.5px;
+  bottom: 19px;
+}
+
+.del{
+  position: absolute;
+  left: 166.5px;
+  bottom: 19px;
+}
+
+.sui{
+  position: absolute;
+  right: 176.5px;
+  bottom: 19px;
+}
+/*room******************************************************************************************/
+
+
+/*pricing******************************************************************************************/
+.container_pricing_big{
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.container_pricing{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 41px;
+}
+
+.container_pricing_title{
+  color: #F2F4D1;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.container_pkg{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 41px;
+}
+
+.container_pkg_small{
+  display: flex;
+  width: 380px;
+  height: 380px;
+  padding: 30px 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid #F2F4D1;
+}
+
+.container_pkg_small_title{
+  color: #F2F4D1;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.container_pkg_small_list{
+  width: 327px;
+  color: #F2F4D1;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.container_pkg_small_price{
+  color: #F2F4D1;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.price{
+  font-size: 32px;
+}
+/*pricing******************************************************************************************/
+
+
+/*about******************************************************************************************/
+.container_about{
+  margin-top: 80px;
+  display: flex;
+  padding: 50px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  background: #F2F4D1;
+}
+.container_about_title{
+  color: #5E6073;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.container_about_desc{
+  width: 1015px;
+  color: #5E6073;
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 42px */
+}
+/*about******************************************************************************************/
+
+/* Footer Styles */
+.footer {
+  background-color: #5e6072;
+  color: #ffffff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footer .footer-bottom {
+  border-top: 1px solid #34495e;
+  padding-top: 20px;
+  font-size: 12px;
+  color: #95a5a6;
+}
+
+.footer .footer-bottom p {
+  margin: 0;
+}
+
