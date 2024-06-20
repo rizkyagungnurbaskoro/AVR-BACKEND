@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" href="../static/CCheckout.css">
+    <link rel="stylesheet" href="CCheckout.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
     <meta charset="UTF-8">
@@ -12,12 +12,12 @@
 <div class="container_navbar">
     <div class="container_navbar_content">
         <div class="container_Lnavbar">
-            <div class="logo"><img src="../static/LogoMain.png"></div>
+            <div class="logo"><img src="LogoMain.png"></div>
             <div class="container_Mnavbar">
-                <a href="index.html" class="LHome navbutton">Home</a>
-                <a href="index.html#targetRooms" class="LRooms navbutton">Rooms</a>
-                <a href="index.html#targetPrice" class="LPricing navbutton">Pricing</a>
-                <a href="index.html#targetAbout" class="LAbout  navbutton">About</a>
+                <a href="/" class="LHome navbutton">Home</a>
+                <a href="/#targetRooms" class="LRooms navbutton">Rooms</a>
+                <a href="/#targetPrice" class="LPricing navbutton">Pricing</a>
+                <a href="/#targetAbout" class="LAbout navbutton">About</a>
             </div>
         </div>
     </div>
@@ -37,9 +37,9 @@
                 <div class="bold">RM550.00</div>
             </div>
         </div>
-        <form th:action="@{/payments/add}" th:object="${payment}" method="post">
+        <form th:action="@{/checkout}" th:object="${payment}" method="post">
             <div class="payment-details">
-                <input type="text" th:field="*{cardHolderName}" class="input-field" placeholder="Cardholder’s Name">
+                <input type="text" th:field="*{cardholderName}" class="input-field" placeholder="Cardholder’s Name">
                 <input type="text" th:field="*{cardNumber}" class="input-field" placeholder="Card Number">
                 <div class="input-group">
                     <input type="text" th:field="*{expDate}" class="input-small" placeholder="Exp Date">
