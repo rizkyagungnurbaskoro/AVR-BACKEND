@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - Agua Vista Retreat</title>
+    <link rel="stylesheet" href="CCheckout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
+</head>
+<body>
+<div class="checkout-container">
+    <h1>Checkout</h1>
+    <form th:action="@{/checkout}" method="post" th:object="${payment}">
+        <div class="form-group">
+            <label for="cardholderName">Cardholder Name</label>
+            <input type="text" id="cardholderName" th:field="*{cardholderName}" required>
+        </div>
+        <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" th:field="*{cardNumber}" required>
+        </div>
+        <div class="form-group">
+            <label for="expDate">Expiration Date</label>
+            <input type="text" id="expDate" th:field="*{expDate}" placeholder="MM/YY" required>
+        </div>
+        <div class="form-group">
+            <label for="cvc">CVC</label>
+            <input type="text" id="cvc" th:field="*{cvc}" required>
+        </div>
+        <input type="hidden" id="selectedRoom" name="selectedRoom" th:value="${payment.roomType}">
+        <input type="hidden" id="checkin" name="checkin" th:value="${payment.checkinDate}">
+        <input type="hidden" id="checkout" name="checkout" th:value="${payment.checkoutDate}">
+        <input type="hidden" id="counterValueAdult" name="counterValueAdult" th:value="${payment.adults}">
+        <input type="hidden" id="counterValueChild" name="counterValueChild" th:value="${payment.children}">
+        <div class="form-group">
+            <button type="submit" class="btn">Pay Now</button>
+        </div>
+    </form>
+    <div th:if="${errorMessage}" class="error-message">
+        <p th:text="${errorMessage}"></p>
+    </div>
+</div>
+</body>
+</html>
