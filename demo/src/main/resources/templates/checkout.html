@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Checkout - Agua Vista Retreat</title>
-    <link rel="stylesheet" href="CCheckout.css">
+    <link rel="stylesheet" href="/CCheckout.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
 </head>
@@ -27,11 +27,11 @@
             <label for="cvc">CVC</label>
             <input type="text" id="cvc" th:field="*{cvc}" required>
         </div>
-        <input type="hidden" id="selectedRoom" name="selectedRoom" th:value="${payment.roomType}">
-        <input type="hidden" id="checkin" name="checkin" th:value="${payment.checkinDate}">
-        <input type="hidden" id="checkout" name="checkout" th:value="${payment.checkoutDate}">
-        <input type="hidden" id="counterValueAdult" name="counterValueAdult" th:value="${payment.adults}">
-        <input type="hidden" id="counterValueChild" name="counterValueChild" th:value="${payment.children}">
+        <input type="hidden" id="selectedRoom" name="selectedRoom" th:value="${selectedRoom}">
+        <input type="hidden" id="checkin" name="checkin" th:value="${checkin}">
+        <input type="hidden" id="checkout" name="checkout" th:value="${checkout}">
+        <input type="hidden" id="counterValueAdult" name="counterValueAdult" th:value="${counterValueAdult}">
+        <input type="hidden" id="counterValueChild" name="counterValueChild" th:value="${counterValueChild}">
         <div class="form-group">
             <button type="submit" class="btn">Pay Now</button>
         </div>

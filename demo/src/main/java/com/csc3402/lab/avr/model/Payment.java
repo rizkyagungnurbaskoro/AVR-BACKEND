@@ -157,4 +157,10 @@ public class Payment {
                 ", booking=" + booking +
                 '}';
     }
+
+    public void setAdults(int counterValueAdult) {
+    }
+
+    public void setChildren(int counterValueChild) {
+    }
 }

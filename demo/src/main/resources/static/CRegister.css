@@ -1,7 +1,7 @@
 body{
   margin: 0;
   flex-shrink: 0;
-  background: url(bg.jpg) lightgray 50% / cover no-repeat;
+  background: url(images/bg.jpg) lightgray 50% / cover no-repeat;
 }
 
 .gradient{

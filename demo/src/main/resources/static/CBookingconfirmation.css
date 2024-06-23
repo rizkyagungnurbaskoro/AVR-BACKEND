@@ -6,7 +6,7 @@
     width: 100vw;
     max-width: 100%;
     background: linear-gradient(0deg, #89A3B2 6.01%, rgba(0, 0, 0, 0.00) 73.03%),
-    url('bg.jpg') center/cover no-repeat;
+    url('images/bg.jpg') center/cover no-repeat;
     background-attachment: fixed;
 }
 

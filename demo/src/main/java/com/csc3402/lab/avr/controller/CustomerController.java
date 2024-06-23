@@ -1,11 +1,11 @@
 package com.csc3402.lab.avr.controller;
 
 import com.csc3402.lab.avr.model.*;
-import com.csc3402.lab.avr.repository.CustomerRepository;
-import com.csc3402.lab.avr.repository.PaymentRepository;
-import com.csc3402.lab.avr.repository.RoomRepository;
-import com.csc3402.lab.avr.repository.BookingRepository;
+import com.csc3402.lab.avr.repository.*;
+import com.csc3402.lab.avr.service.BookingService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +22,8 @@ import java.util.List;
 @RequestMapping("/")
 public class CustomerController {
 
+    private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
+
     @Autowired
     private RoomRepository roomRepository;
 
@@ -33,6 +35,9 @@ public class CustomerController {
 
     @Autowired
     private BookingRepository bookingRepository;
+
+    @Autowired
+    private BookingService bookingService;
 
     @GetMapping("/")
     public String home(Model model) {
@@ -88,13 +93,26 @@ public class CustomerController {
     }
 
     @GetMapping("/checkout")
-    public String checkout(Model model) {
+    public String checkout(@RequestParam("selectedRoom") String selectedRoom,
+                           @RequestParam("checkin") String checkin,
+                           @RequestParam("checkout") String checkout,
+                           @RequestParam("counterValueAdult") int counterValueAdult,
+                           @RequestParam("counterValueChild") int counterValueChild,
+                           Model model) {
+        model.addAttribute("selectedRoom", selectedRoom);
+        model.addAttribute("checkin", checkin);
+        model.addAttribute("checkout", checkout);
+        model.addAttribute("counterValueAdult", counterValueAdult);
+        model.addAttribute("counterValueChild", counterValueChild);
         model.addAttribute("payment", new Payment());
-        return "checkout"; // Ensure this matches the template name
+        return "checkout";
     }
 
     @PostMapping("/checkout")
-    public String addPayment(@Valid Payment payment, BindingResult result, Model model, @RequestParam("selectedRoom") String selectedRoom, @RequestParam("checkin") String checkin, @RequestParam("checkout") String checkout) {
+    public String addPayment(@Valid Payment payment, BindingResult result, Model model,
+                             @RequestParam("selectedRoom") String selectedRoom,
+                             @RequestParam("checkin") String checkin,
+                             @RequestParam("checkout") String checkout) {
         if (result.hasErrors()) {
             return "checkout";
         }
@@ -115,18 +133,14 @@ public class CustomerController {
         payment.setTotalPrice(totalPrice);
         payment.setCheckinDate(Date.from(checkinDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
         payment.setCheckoutDate(Date.from(checkoutDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        paymentRepository.save(payment);
 
-        // Assuming you create a booking for the payment
         Booking booking = new Booking();
         booking.setStart(Date.from(checkinDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
         booking.setEndDate(Date.from(checkoutDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        booking.setBookDate(new Date());
         booking.setNotes("Booking notes");
         booking.setStatus("Confirmed");
-        booking = bookingRepository.save(booking);
+        bookingRepository.save(booking);
 
-        // Link the booking to the payment
         payment.setBooking(booking);
         paymentRepository.save(payment);
 
@@ -135,8 +149,11 @@ public class CustomerController {
 
     @GetMapping("/confirmation")
     public String confirmation(@RequestParam Integer bookingId, Model model) {
-        Booking booking = bookingRepository.findById(bookingId)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid booking Id:" + bookingId));
+        Booking booking = bookingRepository.findById(bookingId).orElse(null);
+        if (booking == null) {
+            model.addAttribute("errorMessage", "Booking not found");
+            return "error";
+        }
         model.addAttribute("booking", booking);
         return "bookingconfirmation";
     }
