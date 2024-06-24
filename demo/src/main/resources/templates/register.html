@@ -14,21 +14,22 @@
     AGUA VISTA RETREAT
   </div>
   <div class="outer-container">
-    <div class="content-container">
-      <div class="register-text">Register</div>
-      <form th:action="@{/customers/add}" th:object="${customer}" method="post">
-        <div class="input-box">
-          <input type="text" id="fname" name="fname" placeholder="Name" th:field="*{fname}">
-          <input type="email" id="email" name="email" placeholder="Email" th:field="*{email}">
-          <input type="password" id="password" name="password" placeholder="Password" th:field="*{password}">
-          <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password">
-          <div class="buttons">
-            <input type="submit" class="button1" value="Sign Up">
-          </div>
+  <div class="content-container">
+    <div class="register-text">Register</div>
+    <form action="#" th:action="@{/customers/add}" th:object="${customer}" method="post">
+      <div class="input-box">
+        <input type="text" id="fname" name="fname" placeholder="Name" th:field="*{fname}">
+        <input type="email" id="email" name="email" placeholder="Email" th:field="*{email}">
+        <input type="password" id="pass" name="password" placeholder="Password">
+        <input type="password" id="cpass" name="cpassword" placeholder="Confirm Password">
+        <div class="buttons">
+          <input onclick="window.location.href='signin.html';" class="button1" type="submit" value="Sign Up">
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
+  </div>
   </div>
 </div>
 </body>
+
 </html>

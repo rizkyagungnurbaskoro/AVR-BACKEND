@@ -99,11 +99,23 @@ public class CustomerController {
                            @RequestParam("counterValueAdult") int counterValueAdult,
                            @RequestParam("counterValueChild") int counterValueChild,
                            Model model) {
+        Room room = roomRepository.findByRoomType(selectedRoom);
+        if (room == null) {
+            model.addAttribute("errorMessage", "Invalid room type selected");
+            return "error";
+        }
+
+        LocalDate checkinDate = LocalDate.parse(checkin);
+        LocalDate checkoutDate = LocalDate.parse(checkout);
+        long daysBetween = ChronoUnit.DAYS.between(checkinDate, checkoutDate);
+        double totalPrice = room.getPrice() * daysBetween;
+
         model.addAttribute("selectedRoom", selectedRoom);
         model.addAttribute("checkin", checkin);
         model.addAttribute("checkout", checkout);
         model.addAttribute("counterValueAdult", counterValueAdult);
         model.addAttribute("counterValueChild", counterValueChild);
+        model.addAttribute("totalPrice", totalPrice);
         model.addAttribute("payment", new Payment());
         return "checkout";
     }
@@ -137,8 +149,9 @@ public class CustomerController {
         Booking booking = new Booking();
         booking.setStart(Date.from(checkinDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
         booking.setEndDate(Date.from(checkoutDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        booking.setNotes("Booking notes");
+        booking.setNotes(payment.getCardholderName()); // Using cardholder name as guest name
         booking.setStatus("Confirmed");
+        booking.setRoomType(selectedRoom);  // Assuming this field exists in Booking
         bookingRepository.save(booking);
 
         payment.setBooking(booking);
@@ -154,7 +167,11 @@ public class CustomerController {
             model.addAttribute("errorMessage", "Booking not found");
             return "error";
         }
+
+        // Assuming that you want to get the first customer
+        Customer customer = booking.getCustomers().stream().findFirst().orElse(null);
         model.addAttribute("booking", booking);
+        model.addAttribute("customer", customer);
         return "bookingconfirmation";
     }
 }

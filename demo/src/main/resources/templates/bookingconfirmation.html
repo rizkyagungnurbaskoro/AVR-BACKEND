@@ -10,19 +10,19 @@
   <h2>Booking Confirmation</h2>
   <div>
     <label>Guest Name:</label>
-    <span th:text="${booking.notes}">Guest Name</span>
+    <span th:text="${customer.firstName} + ' ' + ${customer.lastName}">Guest Name</span>
   </div>
   <div>
     <label>Room Type:</label>
-    <span th:text="${booking.status}">Room Type</span>
+    <span th:text="${booking.roomType}">Room Type</span>
   </div>
   <div>
     <label>Check-in Date:</label>
-    <span th:text="${booking.start}">Check-in Date</span>
+    <span th:text="${#dates.format(booking.start, 'yyyy-MM-dd')}">Check-in Date</span>
   </div>
   <div>
     <label>Check-out Date:</label>
-    <span th:text="${booking.endDate}">Check-out Date</span>
+    <span th:text="${#dates.format(booking.endDate, 'yyyy-MM-dd')}">Check-out Date</span>
   </div>
 </div>
 </body>

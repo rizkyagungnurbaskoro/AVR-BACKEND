@@ -1,14 +1,16 @@
-/* Background */
-body {
+/*background*********************************************************************************************/
+body{
   margin: 0;
   width: 100vw;
   height: 2300px;
   background: #5E6073;
   max-width: 100%;
 }
+/*Background*********************************************************************************************/
 
-/* Navbar */
-.container_navbar {
+
+/*navbar*********************************************************************************************/
+.container_navbar{
   display: flex;
   position: fixed;
   padding: 5px 10px;
@@ -18,27 +20,28 @@ body {
   background: #F2F4D1;
   width: 99%;
   z-index: 1;
+
 }
 
-.container_navbar_content {
+.container_navbar_content{
   width: 100vw;
   display: flex;
   justify-content: space-between;
   max-width: 100%;
 }
 
-.container_Lnavbar {
+.container_Lnavbar{
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.logo img {
+.logo img{
   width: 75%;
   height: 75%;
 }
 
-.container_Mnavbar {
+.container_Mnavbar{
   display: flex;
   align-items: flex-start;
   gap: 35px;
@@ -49,7 +52,7 @@ body {
   line-height: normal;
 }
 
-.container_Rnavbar {
+.container_Rnavbar{
   display: flex;
   padding: 10px;
   align-items: center;
@@ -63,8 +66,8 @@ body {
   line-height: normal;
 }
 
-/* Effect while hover */
-.navbutton:hover {
+/*  effect while hover  */
+.navbutton:hover{
   color: #000;
 }
 
@@ -73,21 +76,23 @@ a {
   color: #5E6073;
 }
 
-input {
+input{
   background-color: unset;
 }
+/*Navbar*********************************************************************************************/
 
-/* Big Brand */
-.container_brand {
+
+/*big brand******************************************************************************************/
+.container_brand{
   display: flex;
   height: 581px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  background: url(images/mainphoto.png) lightgray 0px -132.961px / 100% 145.77% no-repeat;
+  background: url(img/mainphoto.png) lightgray 0px -132.961px / 100% 145.77% no-repeat;
 }
 
-.container_brand_text {
+.container_brand_text{
   color: #F2F4D1;
   font-family: Italiana;
   font-size: 128px;
@@ -95,9 +100,11 @@ input {
   font-weight: 400;
   line-height: normal;
 }
+/*big brand******************************************************************************************/
 
-/* Booking */
-.container_booking {
+
+/*booking******************************************************************************************/
+.container_booking{
   display: flex;
   height: 50px;
   padding: 30px 100px;
@@ -108,8 +115,8 @@ input {
   background: #F2F4D1;
 }
 
-/* Container for each of the dropdown */
-.ddbooking {
+/*container for each of the dropdown*/
+.ddbooking{
   display: flex;
   width: 224px;
   flex-direction: column;
@@ -118,8 +125,8 @@ input {
   flex-shrink: 0;
 }
 
-/* Label for each of the dropdown */
-.thename {
+/*label for each of the dropdown*/
+.thename{
   color: #5E6073;
   font-size: 14px;
   font-style: normal;
@@ -127,8 +134,8 @@ input {
   line-height: normal;
 }
 
-/* Container for each dd including the dd content */
-.ddroom {
+/*container for each dd including the dd content*/
+.ddroom{
   position: relative;
   display: inline-block;
   width: 220px;
@@ -136,15 +143,15 @@ input {
   cursor: pointer;
 }
 
-/* Container for the dd abstract */
-.dd {
+/*container for the dd abstract*/
+.dd{
   display: flex;
   width: 224px;
   justify-content: space-between;
   flex-shrink: 0;
 }
 
-.ddline {
+.ddline{
   width: 220px;
   height: 0px;
   flex-shrink: 0;
@@ -152,7 +159,7 @@ input {
   stroke: #5E6073;
 }
 
-.ddtext-room, .ddtext-guest, .ddtext-date-in, .ddtext-date-out {
+.ddtext-room, .ddtext-guest, .ddtext-date-in, .ddtext-date-out{
   color: rgba(94, 96, 115, 0.50);
   font-size: 18px;
   font-style: normal;
@@ -160,7 +167,7 @@ input {
   line-height: normal;
 }
 
-.ddarrow {
+.ddarrow{
   width: 17px;
   height: 8px;
   flex-shrink: 0;
@@ -169,7 +176,7 @@ input {
   transition-duration: 0.8s;
 }
 
-/* Dropdown content ROOM */
+/*dropdown content ROOM*/
 .dropdown-content-room {
   display: none;
   position: absolute;
@@ -181,8 +188,8 @@ input {
   box-shadow: 0px 460px 129px 0px rgba(0, 0, 0, 0.00), 0px 295px 118px 0px rgba(0, 0, 0, 0.01), 0px 166px 99px 0px rgba(0, 0, 0, 0.05), 0px 74px 74px 0px rgba(0, 0, 0, 0.09), 0px 18px 41px 0px rgba(0, 0, 0, 0.10);
 }
 
-/* Dropdown content for each room selection */
-.dropdown-content-room a {
+/*dropdown content for each room selection*/
+.dropdown-content-room a{
   text-decoration: none;
   display: block;
   padding: 10px;
@@ -193,38 +200,39 @@ input {
   line-height: normal;
 }
 
-/* Display the dd content while hover */
-.ddroom:hover .dropdown-content-room {
+/*display the dd content while hover*/
+.ddroom:hover .dropdown-content-room{
   display: block;
 }
 
-/* Recolor the font to black while hover */
-.dropdown-content-room a:hover {
+/*recolor the font to black while hover*/
+.dropdown-content-room a:hover{
   color: #000;
 }
 
-/* To display the dd content, works with JS */
-.show {
+/*to display the dd content, works with JS*/
+.show{
   display: block;
 }
 
-/* Rotate the arrow while hover */
-.ddroom:hover .ddarrow {
+/*rotate the arrow while hover*/
+.ddroom:hover .ddarrow{
   transform: rotate(-180deg);
   transform-origin: bottom;
 }
 
-/* To change the font color while hover */
-.ddroom:hover .ddtextcolor {
+/* to change the font color while hover*/
+.ddroom:hover .ddtextcolor{
   color: black;
 }
 
-/* To change the displayed output with JS code integration */
-.selected {
+/*to change the displayed output with JS code intergration*/
+.selected{
   color: #000;
 }
 
-.counterA, .counterB {
+
+.counterA, counterB{
   display: flex;
   padding: 0px 10px;
   justify-content: center;
@@ -232,7 +240,7 @@ input {
   gap: 16px;
 }
 
-.btnNo {
+.btnNo{
   color: #5E6073;
   text-align: center;
   font-family: Inter;
@@ -242,8 +250,8 @@ input {
   line-height: normal;
 }
 
-/* Dropdown content guest */
-.dropdown-content-guest {
+/*dropdown content guest*/
+.dropdown-content-guest{
   display: none;
   position: absolute;
   top: 35px;
@@ -259,50 +267,40 @@ input {
   box-shadow: 0px 460px 129px 0px rgba(0, 0, 0, 0.00), 0px 295px 118px 0px rgba(0, 0, 0, 0.01), 0px 166px 99px 0px rgba(0, 0, 0, 0.05), 0px 74px 74px 0px rgba(0, 0, 0, 0.09), 0px 18px 41px 0px rgba(0, 0, 0, 0.10);
   width: 224px;
   height: 118px;
+
 }
 
-/* Container for adult and child counter */
-.counter-adult, .counter-child {
+/*container for adult and child counter*/
+.counter-adult, .counter-child{
   display: flex;
   width: 224px;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Display guest dd content while hover JS */
-.ddroom:hover .dropdown-content-guest {
+/*display guest dd content while hover JS*/
+.ddroom:hover .dropdown-content-guest{
   display: block;
 }
 
-/* Datepicker style */
-input[type="date"] {
+/*datepicker style*/
+input[type="date"]{
   width: 224px;
   border-radius: 30px;
   background-color: unset;
 }
+::-webkit-datetime-edit-fields-wrapper {padding: 10px;}
+::-webkit-datetime-edit-text { }
+::-webkit-datetime-edit-month-field {}
+::-webkit-datetime-edit-day-field {}
+::-webkit-datetime-edit-year-field {}
+::-webkit-inner-spin-button { display: none; }
+::-webkit-calendar-picker-indicator { padding: 0px 20px;}
+/*booking******************************************************************************************/
 
-input[type="date"]::-webkit-datetime-edit-fields-wrapper {
-  padding: 10px;
-}
 
-input[type="date"]::-webkit-datetime-edit-text {}
-
-input[type="date"]::-webkit-datetime-edit-month-field {}
-
-input[type="date"]::-webkit-datetime-edit-day-field {}
-
-input[type="date"]::-webkit-datetime-edit-year-field {}
-
-input[type="date"]::-webkit-inner-spin-button {
-  display: none;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  padding: 0px 20px;
-}
-
-/* Room */
-.container_rooms {
+/*room******************************************************************************************/
+.container_rooms{
   margin: 40px auto;
   display: flex;
   width: 1389px;
@@ -315,7 +313,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: 3px solid #F2F4D1;
 }
 
-.title_rooms {
+.title_rooms{
   color: #F2F4D1;
   font-size: 36px;
   font-style: normal;
@@ -323,7 +321,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: normal;
 }
 
-.roompics {
+.roompics{
   display: flex;
   width: 1440px;
   justify-content: center;
@@ -331,31 +329,31 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   gap: 50px;
 }
 
-.pstandard {
+.pstandard{
   position: relative;
   width: 412px;
   height: 311px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(images/standard.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(img/standard.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
 }
 
-.pdeluxe {
+.pdeluxe{
   position: relative;
   width: 412px;
   height: 311px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(images/deluxe.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(img/deluxe.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
 }
 
-.psuite {
+.psuite{
   position: relative;
   width: 412px;
   height: 311px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(images/suite.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(img/suite.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
 }
 
-.roompictext {
+.roompictext{
   color: #F2F4D1;
   font-size: 24px;
   font-style: normal;
@@ -363,39 +361,41 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: normal;
 }
 
-.sta {
+.sta{
   position: absolute;
   left: 153.5px;
   bottom: 19px;
 }
 
-.del {
+.del{
   position: absolute;
   left: 166.5px;
   bottom: 19px;
 }
 
-.sui {
+.sui{
   position: absolute;
   right: 176.5px;
   bottom: 19px;
 }
+/*room******************************************************************************************/
 
-/* Pricing */
-.container_pricing_big {
+
+/*pricing******************************************************************************************/
+.container_pricing_big{
   margin-top: 80px;
   display: flex;
   justify-content: center;
 }
 
-.container_pricing {
+.container_pricing{
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 41px;
 }
 
-.container_pricing_title {
+.container_pricing_title{
   color: #F2F4D1;
   font-size: 36px;
   font-style: normal;
@@ -403,14 +403,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: normal;
 }
 
-.container_pkg {
+.container_pkg{
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 41px;
 }
 
-.container_pkg_small {
+.container_pkg_small{
   display: flex;
   width: 380px;
   height: 380px;
@@ -421,7 +421,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: 3px solid #F2F4D1;
 }
 
-.container_pkg_small_title {
+.container_pkg_small_title{
   color: #F2F4D1;
   font-size: 28px;
   font-style: normal;
@@ -429,7 +429,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: normal;
 }
 
-.container_pkg_small_list {
+.container_pkg_small_list{
   width: 327px;
   color: #F2F4D1;
   font-size: 24px;
@@ -438,7 +438,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: normal;
 }
 
-.container_pkg_small_price {
+.container_pkg_small_price{
   color: #F2F4D1;
   font-size: 15px;
   font-style: normal;
@@ -446,12 +446,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: normal;
 }
 
-.price {
+.price{
   font-size: 32px;
 }
+/*pricing******************************************************************************************/
 
-/* About */
-.container_about {
+
+/*about******************************************************************************************/
+.container_about{
   margin-top: 80px;
   display: flex;
   padding: 50px 0px;
@@ -461,8 +463,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   gap: 35px;
   background: #F2F4D1;
 }
-
-.container_about_title {
+.container_about_title{
   color: #5E6073;
   font-size: 36px;
   font-style: normal;
@@ -470,16 +471,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: normal;
 }
 
-.container_about_desc {
+.container_about_desc{
   width: 1015px;
   color: #5E6073;
   text-align: center;
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
-  /* 42px */
+  line-height: 150%; /* 42px */
 }
+/*about******************************************************************************************/
 
 /* Footer Styles */
 .footer {
@@ -499,3 +500,4 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .footer .footer-bottom p {
   margin: 0;
 }
+
