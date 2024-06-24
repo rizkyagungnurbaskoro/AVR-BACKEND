@@ -89,7 +89,7 @@ input{
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  background: url(img/mainphoto.png) lightgray 0px -132.961px / 100% 145.77% no-repeat;
+  background: url(mainphoto.png) lightgray 0px -132.961px / 100% 145.77% no-repeat;
 }
 
 .container_brand_text{
@@ -334,7 +334,7 @@ input[type="date"]{
   width: 412px;
   height: 311px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(img/standard.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(standard.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
 }
 
 .pdeluxe{
@@ -342,7 +342,7 @@ input[type="date"]{
   width: 412px;
   height: 311px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(img/deluxe.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(deluxe.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
 }
 
 .psuite{
@@ -350,7 +350,7 @@ input[type="date"]{
   width: 412px;
   height: 311px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(img/suite.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.02%, #000 96.23%), url(suite.png) lightgray 0px -10.236px / 100% 106.583% no-repeat;
 }
 
 .roompictext{

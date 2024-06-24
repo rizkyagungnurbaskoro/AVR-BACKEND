@@ -7,37 +7,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
 </head>
-<body>
-<div class="checkout-container">
-    <h1>Checkout</h1>
-    <form th:action="@{/checkout}" method="post" th:object="${payment}">
-        <div class="form-group">
-            <label for="cardholderName">Cardholder Name</label>
-            <input type="text" id="cardholderName" th:field="*{cardholderName}" required>
+<body class="body">
+<div class="topnavbar">
+    <div class="logo-container">
+        <img class="logo" src="LogoMain.png" alt="Logo">
+    </div>
+    <div class="header-title">AGUA VISTA RETREAT</div>
+</div>
+<div class="summary-container">
+    <div class="summary">
+        <div class="summary-title">Summary</div>
+        <div class="price-details">
+            <div class="price-item">
+                <div th:text="${selectedRoom}">Room Type</div>
+                <div class="bold" th:text="'RM ' + ${totalPrice}">Price</div>
+            </div>
+            <div class="divider"></div>
+            <div class="price-item">
+                <div>Total:</div>
+                <div class="bold" th:text="'RM ' + ${totalPrice}">Total Price</div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="cardNumber">Card Number</label>
-            <input type="text" id="cardNumber" th:field="*{cardNumber}" required>
+        <div class="payment-details">
+            <form th:action="@{/checkout}" method="post" th:object="${payment}">
+                <input type="text" class="input-field" id="cardholderName" th:field="*{cardholderName}" placeholder="Cardholder’s Name" required>
+                <input type="text" class="input-field" id="cardNumber" th:field="*{cardNumber}" placeholder="Card Number" required>
+                <div class="input-group">
+                    <input type="text" class="input-small" id="expDate" th:field="*{expDate}" placeholder="Exp Date" required>
+                    <input type="text" class="input-xsmall" id="cvc" th:field="*{cvc}" placeholder="CVC" required>
+                </div>
+                <input type="hidden" id="selectedRoom" name="selectedRoom" th:value="${selectedRoom}">
+                <input type="hidden" id="checkin" name="checkin" th:value="${checkin}">
+                <input type="hidden" id="checkout" name="checkout" th:value="${checkout}">
+                <input type="hidden" id="counterValueAdult" name="counterValueAdult" th:value="${counterValueAdult}">
+                <input type="hidden" id="counterValueChild" name="counterValueChild" th:value="${counterValueChild}">
+                <button type="submit" class="pay-now-button">Pay Now</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="expDate">Expiration Date</label>
-            <input type="text" id="expDate" th:field="*{expDate}" placeholder="MM/YY" required>
-        </div>
-        <div class="form-group">
-            <label for="cvc">CVC</label>
-            <input type="text" id="cvc" th:field="*{cvc}" required>
-        </div>
-        <input type="hidden" id="selectedRoom" name="selectedRoom" th:value="${selectedRoom}">
-        <input type="hidden" id="checkin" name="checkin" th:value="${checkin}">
-        <input type="hidden" id="checkout" name="checkout" th:value="${checkout}">
-        <input type="hidden" id="counterValueAdult" name="counterValueAdult" th:value="${counterValueAdult}">
-        <input type="hidden" id="counterValueChild" name="counterValueChild" th:value="${counterValueChild}">
-        <div class="form-group">
-            <button type="submit" class="btn">Pay Now</button>
-        </div>
-    </form>
-    <div th:if="${errorMessage}" class="error-message">
-        <p th:text="${errorMessage}"></p>
     </div>
 </div>
 </body>
