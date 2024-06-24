@@ -1,28 +1,45 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Booking Confirmation</title>
   <link rel="stylesheet" href="/CBookingconfirmation.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agua Vista Retreat</title>
 </head>
-<body>
-<div class="container">
-  <h2>Booking Confirmation</h2>
-  <div>
-    <label>Guest Name:</label>
-    <span th:text="${customer.firstName} + ' ' + ${customer.lastName}">Guest Name</span>
+<body class="body">
+<div class="topnavbar">
+  <div class="logo-container">
   </div>
-  <div>
-    <label>Room Type:</label>
-    <span th:text="${booking.roomType}">Room Type</span>
-  </div>
-  <div>
-    <label>Check-in Date:</label>
-    <span th:text="${#dates.format(booking.start, 'yyyy-MM-dd')}">Check-in Date</span>
-  </div>
-  <div>
-    <label>Check-out Date:</label>
-    <span th:text="${#dates.format(booking.endDate, 'yyyy-MM-dd')}">Check-out Date</span>
+  <div class="header-title">AGUA VISTA RETREAT</div>
+</div>
+<div class="booking-confirmation">
+  <img src="/img/LogoMain.png" alt="Confirmation Image">
+  <div class="confirmation-text">
+    <div class="title">Booking Confirmed!</div>
+    <div class="details">Here are the details of your booking</div>
+    <div class="container">
+      <div class="column">
+        <div class="detail">
+          <div class="label">Guest’s Name</div>
+          <div class="value" th:text="${customer != null ? customer.firstName + ' ' + customer.lastName : booking.notes}">Guest Name</div>
+        </div>
+        <div class="detail">
+          <div class="label">Room Type</div>
+          <div class="value" th:text="${booking.roomType}">Room Type</div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="detail">
+          <div class="label">Check-in</div>
+          <div class="value" th:text="${#dates.format(booking.start, 'dd/MM/yyyy')}">Check-in Date</div>
+        </div>
+        <div class="detail">
+          <div class="label">Check-out</div>
+          <div class="value" th:text="${#dates.format(booking.endDate, 'dd/MM/yyyy')}">Check-out Date</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </body>
